@@ -39,8 +39,11 @@ public class pagecontroller {
     }
 
     @PostMapping("/api/login")
-    public String UserLogin(@RequestBody String entity) {
-        return "";
+    public String UserLogin(@RequestBody SiteUser siteUser) {
+        System.out.println(siteUser);        
+        System.out.println(siteUser.getName());
+        System.out.println(siteUser.getEmail());
+        return "받았음.";
     }
     
 

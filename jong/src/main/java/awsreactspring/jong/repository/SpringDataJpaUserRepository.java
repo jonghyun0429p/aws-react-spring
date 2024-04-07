@@ -12,7 +12,7 @@ public interface SpringDataJpaUserRepository extends JpaRepository<SiteUser, Lon
 
     Optional<SiteUser> findByName(String name);
 
-    Optional<SiteUser> findById(Long userid);    
+    Optional<SiteUser> findById(Long id);    
 
     Optional<SiteUser> findByPhone(String phone);
 }
