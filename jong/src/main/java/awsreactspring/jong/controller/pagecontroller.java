@@ -1,10 +1,13 @@
 package awsreactspring.jong.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import awsreactspring.jong.domain.SiteUser;
 import awsreactspring.jong.service.UserService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +33,8 @@ public class pagecontroller {
 
     @ResponseBody
     @PostMapping("/api/join")
-    public String UserJoin(@RequestBody String entity) {
-        System.out.println(entity);
-        System.out.println(entity.getClass().getName());
+    public String UserJoin(@RequestBody SiteUser siteUser) {
+        userService.join(siteUser);
         return "데이터 받기 성공";
     }
 

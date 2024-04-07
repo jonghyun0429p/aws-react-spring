@@ -10,11 +10,15 @@ import jakarta.persistence.Id;
 public class SiteUser {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     String email;
+    @Column(nullable = false)
     String password;
+    @Column(nullable = false)
     String name;
+    @Column(nullable = false)
     String birth;
+    @Column(nullable = false)
     String address;
     @Column(unique = true)
     String phone;
