@@ -40,8 +40,8 @@ public class UserService {
 
     }
 
-    public SiteUser finduser(String email){
-        Optional<SiteUser> optionalUser = userRepository.findByEmail(email);
+    public SiteUser finduser(SiteUser user){
+        Optional<SiteUser> optionalUser = userRepository.findByEmail(user.getEmail());
         if(optionalUser.isEmpty()){
             throw new IllegalStateException("잘못된 요청입니다.");
         }else{
@@ -50,7 +50,7 @@ public class UserService {
     }
 
     public void changeUser(SiteUser user){
-        SiteUser getUser = finduser(user.getEmail());
+        SiteUser getUser = finduser(user);
 
         getUser.setAddress(user.getAddress());
         getUser.setBirth(user.getBirth());

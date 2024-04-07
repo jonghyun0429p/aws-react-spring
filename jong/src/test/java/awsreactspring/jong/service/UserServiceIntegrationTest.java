@@ -95,7 +95,7 @@ public class UserServiceIntegrationTest {
         //when
         String Check = userService.join(user);
 
-        SiteUser getUser = userService.finduser(user.getEmail());
+        SiteUser getUser = userService.finduser(user);
         System.out.println(getUser.getAddress());        
         System.out.println(getUser.getEmail());
 
